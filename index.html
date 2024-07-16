@@ -260,6 +260,19 @@
   .nav-item:nth-child(6n+5) { background: linear-gradient(135deg, #ffab40, #ff6d00); }
   .nav-item:nth-child(6n) { background: linear-gradient(135deg, #40c4ff, #0091ea); }
 
+  /* New styles for rotating icons */
+  .nav-item-icon {
+    font-size: 1.5rem;
+    margin-right: 8px;
+    display: inline-block;
+    animation: iconBounce 2s infinite;
+  }
+
+  @keyframes iconBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(10deg); }
+  }
+
   @media (max-width: 1024px) {
     :root {
       --tile-size: 110px;
@@ -348,72 +361,72 @@
       <div class="category">
         <h2 class="category-title">搜索引擎</h2>
         <div class="nav-grid">
-          <a href="https://www.google.com" class="nav-item"><span>Google</span></a>
-          <a href="https://www.bing.com" class="nav-item"><span>Bing</span></a>
-          <a href="https://www.baidu.com" class="nav-item"><span>百度</span></a>
-          <a href="https://duckduckgo.com" class="nav-item"><span>DuckDuckGo</span></a>
-          <a href="https://www.ecosia.org" class="nav-item"><span>Ecosia</span></a>
-          <a href="https://yandex.com" class="nav-item"><span>Yandex</span></a>
+          <a href="https://www.google.com" class="nav-item"><span><i class="nav-item-icon">🔍</i>Google</span></a>
+          <a href="https://www.bing.com" class="nav-item"><span><i class="nav-item-icon">🔎</i>Bing</span></a>
+          <a href="https://www.baidu.com" class="nav-item"><span><i class="nav-item-icon">🐾</i>百度</span></a>
+          <a href="https://duckduckgo.com" class="nav-item"><span><i class="nav-item-icon">🦆</i>DuckDuckGo</span></a>
+          <a href="https://www.ecosia.org" class="nav-item"><span><i class="nav-item-icon">🌳</i>Ecosia</span></a>
+          <a href="https://yandex.com" class="nav-item"><span><i class="nav-item-icon">🌐</i>Yandex</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">社交媒体</h2>
         <div class="nav-grid">
-          <a href="https://www.facebook.com" class="nav-item"><span>Facebook</span></a>
-          <a href="https://twitter.com" class="nav-item"><span>Twitter</span></a>
-          <a href="https://www.instagram.com" class="nav-item"><span>Instagram</span></a>
-          <a href="https://www.linkedin.com" class="nav-item"><span>LinkedIn</span></a>
-          <a href="https://www.tiktok.com" class="nav-item"><span>TikTok</span></a>
-          <a href="https://www.reddit.com" class="nav-item"><span>Reddit</span></a>
+          <a href="https://www.facebook.com" class="nav-item"><span><i class="nav-item-icon">👥</i>Facebook</span></a>
+          <a href="https://twitter.com" class="nav-item"><span><i class="nav-item-icon">🐦</i>Twitter</span></a>
+          <a href="https://www.instagram.com" class="nav-item"><span><i class="nav-item-icon">📷</i>Instagram</span></a>
+          <a href="https://www.linkedin.com" class="nav-item"><span><i class="nav-item-icon">💼</i>LinkedIn</span></a>
+          <a href="https://www.tiktok.com" class="nav-item"><span><i class="nav-item-icon">🎵</i>TikTok</span></a>
+          <a href="https://www.reddit.com" class="nav-item"><span><i class="nav-item-icon">👽</i>Reddit</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">实用工具</h2>
         <div class="nav-grid">
-          <a href="https://translate.google.com" class="nav-item"><span>Google翻译</span></a>
-          <a href="https://www.wolframalpha.com" class="nav-item"><span>Wolfram Alpha</span></a>
-          <a href="https://www.calculator.net" class="nav-item"><span>在线计算器</span></a>
-          <a href="https://www.speedtest.net" class="nav-item"><span>网速测试</span></a>
-          <a href="https://www.timeanddate.com" class="nav-item"><span>时间日期</span></a>
-          <a href="https://www.wikihow.com" class="nav-item"><span>WikiHow</span></a>
+          <a href="https://translate.google.com" class="nav-item"><span><i class="nav-item-icon">🌍</i>Google翻译</span></a>
+          <a href="https://www.wolframalpha.com" class="nav-item"><span><i class="nav-item-icon">🧮</i>Wolfram Alpha</span></a>
+          <a href="https://www.calculator.net" class="nav-item"><span><i class="nav-item-icon">🖩</i>在线计算器</span></a>
+          <a href="https://www.speedtest.net" class="nav-item"><span><i class="nav-item-icon">⚡</i>网速测试</span></a>
+          <a href="https://www.timeanddate.com" class="nav-item"><span><i class="nav-item-icon">🕰️</i>时间日期</span></a>
+          <a href="https://www.wikihow.com" class="nav-item"><span><i class="nav-item-icon">📚</i>WikiHow</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">科技资讯</h2>
         <div class="nav-grid">
-          <a href="https://www.techcrunch.com" class="nav-item"><span>TechCrunch</span></a>
-          <a href="https://www.wired.com" class="nav-item"><span>Wired</span></a>
-          <a href="https://www.theverge.com" class="nav-item"><span>The Verge</span></a>
-          <a href="https://arstechnica.com" class="nav-item"><span>Ars Technica</span></a>
-          <a href="https://www.engadget.com" class="nav-item"><span>Engadget</span></a>
-          <a href="https://techradar.com" class="nav-item"><span>TechRadar</span></a>
+          <a href="https://www.techcrunch.com" class="nav-item"><span><i class="nav-item-icon">💻</i>TechCrunch</span></a>
+          <a href="https://www.wired.com" class="nav-item"><span><i class="nav-item-icon">🔌</i>Wired</span></a>
+          <a href="https://www.theverge.com" class="nav-item"><span><i class="nav-item-icon">📱</i>The Verge</span></a>
+          <a href="https://arstechnica.com" class="nav-item"><span><i class="nav-item-icon">🔬</i>Ars Technica</span></a>
+          <a href="https://www.engadget.com" class="nav-item"><span><i class="nav-item-icon">🎮</i>Engadget</span></a>
+          <a href="https://techradar.com" class="nav-item"><span><i class="nav-item-icon">📡</i>TechRadar</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">云存储</h2>
         <div class="nav-grid">
-          <a href="https://www.dropbox.com" class="nav-item"><span>Dropbox</span></a>
-          <a href="https://drive.google.com" class="nav-item"><span>Google Drive</span></a>
-          <a href="https://onedrive.live.com" class="nav-item"><span>OneDrive</span></a>
-          <a href="https://www.box.com" class="nav-item"><span>Box</span></a>
-          <a href="https://www.mediafire.com" class="nav-item"><span>MediaFire</span></a>
-          <a href="https://mega.nz" class="nav-item"><span>MEGA</span></a>
+          <a href="https://www.dropbox.com" class="nav-item"><span><i class="nav-item-icon">📦</i>Dropbox</span></a>
+          <a href="https://drive.google.com" class="nav-item"><span><i class="nav-item-icon">📁</i>Google Drive</span></a>
+          <a href="https://onedrive.live.com" class="nav-item"><span><i class="nav-item-icon">☁️</i>OneDrive</span></a>
+          <a href="https://www.box.com" class="nav-item"><span><i class="nav-item-icon">📂</i>Box</span></a>
+          <a href="https://www.mediafire.com" class="nav-item"><span><i class="nav-item-icon">🔥</i>MediaFire</span></a>
+          <a href="https://mega.nz" class="nav-item"><span><i class="nav-item-icon">🔐</i>MEGA</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">电子邮箱</h2>
         <div class="nav-grid">
-          <a href="https://mail.google.com" class="nav-item"><span>Gmail</span></a>
-          <a href="https://outlook.live.com" class="nav-item"><span>Outlook</span></a>
-          <a href="https://mail.yahoo.com" class="nav-item"><span>Yahoo Mail</span></a>
-          <a href="https://www.zoho.com/mail" class="nav-item"><span>Zoho Mail</span></a>
-          <a href="https://www.protonmail.com" class="nav-item"><span>ProtonMail</span></a>
-          <a href="https://mail.qq.com" class="nav-item"><span>QQ邮箱</span></a>
+          <a href="https://mail.google.com" class="nav-item"><span><i class="nav-item-icon">📧</i>Gmail</span></a>
+          <a href="https://outlook.live.com" class="nav-item"><span><i class="nav-item-icon">📨</i>Outlook</span></a>
+          <a href="https://mail.yahoo.com" class="nav-item"><span><i class="nav-item-icon">📬</i>Yahoo Mail</span></a>
+          <a href="https://www.zoho.com/mail" class="nav-item"><span><i class="nav-item-icon">📪</i>Zoho Mail</span></a>
+          <a href="https://www.protonmail.com" class="nav-item"><span><i class="nav-item-icon">🔒</i>ProtonMail</span></a>
+          <a href="https://mail.qq.com" class="nav-item"><span><i class="nav-item-icon">🐧</i>QQ邮箱</span></a>
         </div>
       </div>
     </div>
