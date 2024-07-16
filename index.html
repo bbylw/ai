@@ -267,12 +267,16 @@
     font-size: 1.5rem;
     margin-right: 8px;
     display: inline-block;
-    animation: iconBounce 2s infinite;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-item:hover .nav-item-icon, .nav-item:focus .nav-item-icon {
+    animation: iconBounce 0.5s infinite alternate;
   }
 
   @keyframes iconBounce {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(10deg); }
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(10deg); }
   }
 
   @media (max-width: 1024px) {
@@ -367,7 +371,7 @@
           <a href="https://www.google.com" class="nav-item"><span><i class="nav-item-icon fas fa-search"></i>Google</span></a>
           <a href="https://www.bing.com" class="nav-item"><span><i class="nav-item-icon fas fa-search"></i>Bing</span></a>
           <a href="https://www.baidu.com" class="nav-item"><span><i class="nav-item-icon fas fa-paw"></i>百度</span></a>
-          <a href="https://duckduckgo.com" class="nav-item"><span><i class="nav-item-icon fas fa-kiwi-bird"></i>DuckDuckGo</span></a>
+          <a href="https://duckduckgo.com" class="nav-item"><span><i class="nav-item-icon fas fa-duck"></i>DuckDuckGo</span></a>
           <a href="https://www.ecosia.org" class="nav-item"><span><i class="nav-item-icon fas fa-tree"></i>Ecosia</span></a>
           <a href="https://yandex.com" class="nav-item"><span><i class="nav-item-icon fas fa-globe"></i>Yandex</span></a>
         </div>
@@ -389,7 +393,7 @@
         <h2 class="category-title">实用工具</h2>
         <div class="nav-grid">
           <a href="https://translate.google.com" class="nav-item"><span><i class="nav-item-icon fas fa-language"></i>Google翻译</span></a>
-          <a href="https://www.wolframalpha.com" class="nav-item"><span><i class="nav-item-icon fas fa-calculator"></i>Wolfram Alpha</span></a>
+          <a href="https://www.wolframalpha.com" class="nav-item"><span><i class="nav-item-icon fas fa-square-root-alt"></i>Wolfram Alpha</span></a>
           <a href="https://www.calculator.net" class="nav-item"><span><i class="nav-item-icon fas fa-calculator"></i>在线计算器</span></a>
           <a href="https://www.speedtest.net" class="nav-item"><span><i class="nav-item-icon fas fa-tachometer-alt"></i>网速测试</span></a>
           <a href="https://www.timeanddate.com" class="nav-item"><span><i class="nav-item-icon fas fa-clock"></i>时间日期</span></a>
@@ -402,7 +406,7 @@
         <div class="nav-grid">
           <a href="https://www.techcrunch.com" class="nav-item"><span><i class="nav-item-icon fas fa-microchip"></i>TechCrunch</span></a>
           <a href="https://www.wired.com" class="nav-item"><span><i class="nav-item-icon fas fa-plug"></i>Wired</span></a>
-          <a href="https://www.theverge.com" class="nav-item"><span><i class="nav-item-icon fas fa-mobile-alt"></i>The Verge</span></a>
+          <a href="https://www.theverge.com" class="nav-item"><span><i class="nav-item-icon fas fa-newspaper"></i>The Verge</span></a>
           <a href="https://arstechnica.com" class="nav-item"><span><i class="nav-item-icon fas fa-flask"></i>Ars Technica</span></a>
           <a href="https://www.engadget.com" class="nav-item"><span><i class="nav-item-icon fas fa-gamepad"></i>Engadget</span></a>
           <a href="https://techradar.com" class="nav-item"><span><i class="nav-item-icon fas fa-satellite-dish"></i>TechRadar</span></a>
@@ -429,7 +433,7 @@
           <a href="https://mail.yahoo.com" class="nav-item"><span><i class="nav-item-icon fas fa-envelope-square"></i>Yahoo Mail</span></a>
           <a href="https://www.zoho.com/mail" class="nav-item"><span><i class="nav-item-icon fas fa-at"></i>Zoho Mail</span></a>
           <a href="https://www.protonmail.com" class="nav-item"><span><i class="nav-item-icon fas fa-shield-alt"></i>ProtonMail</span></a>
-          <a href="https://mail.qq.com" class="nav-item"><span><i class="nav-item-icon fas fa-dove"></i>QQ邮箱</span></a>
+          <a href="https://mail.qq.com" class="nav-item"><span><i class="nav-item-icon fas fa-envelope"></i>QQ邮箱</span></a>
         </div>
       </div>
     </div>
