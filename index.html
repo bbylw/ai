@@ -1,3 +1,4 @@
+
 <html><head><base href="https://hypernav.tech" /><title>HyperNav - Your AI-Powered Navigation Hub</title><style>
   :root {
     --background-color: #111111;
@@ -357,6 +358,83 @@
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const navItems = document.querySelectorAll('.nav-item');
+  const generalIcons = [
+    'fa-globe', 'fa-link', 'fa-external-link-alt', 'fa-star', 'fa-bookmark',
+    'fa-thumbs-up', 'fa-heart', 'fa-check', 'fa-arrow-right', 'fa-bolt',
+    'fa-lightbulb', 'fa-magic', 'fa-rocket', 'fa-puzzle-piece', 'fa-gift',
+    'fa-atom', 'fa-compass', 'fa-gem', 'fa-cube', 'fa-brain'
+  ];
+  
+  navItems.forEach(item => {
+    const link = item.getAttribute('href');
+    const text = item.querySelector('span').textContent;
+    let icon = '';
+
+    // 自动匹配图标
+    if (link.includes('google')) icon = 'fab fa-google';
+    else if (link.includes('youtube')) icon = 'fab fa-youtube';
+    else if (link.includes('facebook')) icon = 'fab fa-facebook-f';
+    else if (link.includes('twitter')) icon = 'fab fa-twitter';
+    else if (link.includes('instagram')) icon = 'fab fa-instagram';
+    else if (link.includes('linkedin')) icon = 'fab fa-linkedin-in';
+    else if (link.includes('pinterest')) icon = 'fab fa-pinterest';
+    else if (link.includes('reddit')) icon = 'fab fa-reddit-alien';
+    else if (link.includes('tiktok')) icon = 'fab fa-tiktok';
+    else if (link.includes('netflix')) icon = 'fas fa-film';
+    else if (link.includes('amazon')) icon = 'fab fa-amazon';
+    else if (link.includes('ebay')) icon = 'fab fa-ebay';
+    else if (link.includes('spotify')) icon = 'fab fa-spotify';
+    else if (link.includes('apple')) icon = 'fab fa-apple';
+    else if (link.includes('microsoft')) icon = 'fab fa-microsoft';
+    else if (link.includes('wikipedia')) icon = 'fab fa-wikipedia-w';
+    else if (link.includes('twitch')) icon = 'fab fa-twitch';
+    else if (link.includes('github')) icon = 'fab fa-github';
+    else if (link.includes('stackoverflow')) icon = 'fab fa-stack-overflow';
+    else if (link.includes('whatsapp')) icon = 'fab fa-whatsapp';
+    else if (link.includes('telegram')) icon = 'fab fa-telegram';
+    else if (link.includes('snapchat')) icon = 'fab fa-snapchat-ghost';
+    else if (link.includes('discord')) icon = 'fab fa-discord';
+    else if (link.includes('yahoo')) icon = 'fab fa-yahoo';
+    else if (link.includes('bing')) icon = 'fa-search';
+    else if (link.includes('baidu')) icon = 'fa-paw';
+    else if (link.includes('duckduckgo')) icon = 'fa-duck';
+    else if (link.includes('ecosia')) icon = 'fa-leaf';
+    else if (link.includes('yandex')) icon = 'fa-globe-europe';
+    else if (link.includes('translate')) icon = 'fa-language';
+    else if (link.includes('wolframalpha')) icon = 'fa-square-root-alt';
+    else if (link.includes('calculator')) icon = 'fa-calculator';
+    else if (link.includes('speedtest')) icon = 'fa-tachometer-alt';
+    else if (link.includes('time')) icon = 'fa-clock';
+    else if (link.includes('wikihow')) icon = 'fa-question-circle';
+    else if (link.includes('techcrunch')) icon = 'fa-microchip';
+    else if (link.includes('wired')) icon = 'fa-wifi';
+    else if (link.includes('verge')) icon = 'fa-newspaper';
+    else if (link.includes('arstechnica')) icon = 'fa-microscope';
+    else if (link.includes('engadget')) icon = 'fa-gamepad';
+    else if (link.includes('techradar')) icon = 'fa-radar';
+    else if (link.includes('dropbox')) icon = 'fab fa-dropbox';
+    else if (link.includes('drive.google')) icon = 'fab fa-google-drive';
+    else if (link.includes('onedrive')) icon = 'fa-cloud';
+    else if (link.includes('box.com')) icon = 'fa-box';
+    else if (link.includes('mediafire')) icon = 'fa-fire';
+    else if (link.includes('mega')) icon = 'fa-database';
+    else if (link.includes('mail') || link.includes('outlook') || text.toLowerCase().includes('邮箱')) icon = 'fa-envelope';
+    else if (link.includes('zoho')) icon = 'fa-at';
+    else if (link.includes('protonmail')) icon = 'fa-shield-alt';
+    else {
+      // 如果没有匹配到特定图标，随机选择一个通用图标
+      icon = generalIcons[Math.floor(Math.random() * generalIcons.length)];
+    }
+    
+    const iconElement = document.createElement('i');
+    iconElement.className = `nav-item-icon fas ${icon}`;
+    item.querySelector('span').prepend(iconElement);
+  });
+});
+</script>
 </head><body>
   <div class="container">
     <div class="logo-container">
@@ -366,90 +444,140 @@
     
     <div class="categories-container">
       <div class="category">
-        <h2 class="category-title">Ai搜索</h2>
+        <h2 class="category-title">搜索引擎</h2>
         <div class="nav-grid">
-          <a href="https://www.google.com" class="nav-item"><span><i class="nav-item-icon fas fa-search"></i>Google</span></a>
-          <a href="https://www.bing.com" class="nav-item"><span><i class="nav-item-icon fas fa-search"></i>Bing</span></a>
-          <a href="https://websim.ai/" class="nav-item"><span><i class="nav-item-icon fas fa-paw"></i>websim</span></a>
-          <a href="https://chatgpt.com/" class="nav-item"><span><i class="nav-item-icon fas fa-tachometer-alt"></i>chatgpt</span></a>
-          <a href="https://www.doubao.com/chat/" class="nav-item"><span><i class="nav-item-icon fas fa-tree"></i>傻豆包</span></a>
-          <a href="https://yuanbao.tencent.com" class="nav-item"><span><i class="nav-item-icon fas fa-globe"></i>傻元宝</span></a>
-          <a href="https://poe.com/" class="nav-item"><span><i class="nav-item-icon fas fa-tree"></i>poe</span></a>
-          <a href="https://claude.ai/" class="nav-item"><span><i class="nav-item-icon fas fa-tachometer-alt"></i>claude</span></a>
+          <a href="https://www.google.com" class="nav-item"><span>Google</span></a>
+          <a href="https://www.bing.com" class="nav-item"><span>Bing</span></a>
+          <a href="https://www.baidu.com" class="nav-item"><span>百度</span></a>
+          <a href="https://duckduckgo.com" class="nav-item"><span>DuckDuckGo</span></a>
+          <a href="https://www.ecosia.org" class="nav-item"><span>Ecosia</span></a>
+          <a href="https://yandex.com" class="nav-item"><span>Yandex</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">社交媒体</h2>
         <div class="nav-grid">
-          <a href="https://www.facebook.com" class="nav-item"><span><i class="nav-item-icon fab fa-facebook-f"></i>Facebook</span></a>
-          <a href="https://twitter.com" class="nav-item"><span><i class="nav-item-icon fab fa-twitter"></i>Twitter</span></a>
-          <a href="https://www.instagram.com" class="nav-item"><span><i class="nav-item-icon fab fa-instagram"></i>Instagram</span></a>
-          <a href="https://www.linkedin.com" class="nav-item"><span><i class="nav-item-icon fab fa-linkedin-in"></i>LinkedIn</span></a>
-          <a href="https://www.tiktok.com" class="nav-item"><span><i class="nav-item-icon fab fa-tiktok"></i>TikTok</span></a>
-          <a href="https://www.reddit.com" class="nav-item"><span><i class="nav-item-icon fab fa-reddit-alien"></i>Reddit</span></a>
-          <a href="https://github.com/" class="nav-item"><span><i class="nav-item-icon fab fa-github"></i>github</span></a>
+          <a href="https://www.facebook.com" class="nav-item"><span>Facebook</span></a>
+          <a href="https://twitter.com" class="nav-item"><span>Twitter</span></a>
+          <a href="https://www.instagram.com" class="nav-item"><span>Instagram</span></a>
+          <a href="https://www.linkedin.com" class="nav-item"><span>LinkedIn</span></a>
+          <a href="https://www.tiktok.com" class="nav-item"><span>TikTok</span></a>
+          <a href="https://www.reddit.com" class="nav-item"><span>Reddit</span></a>
+          <a href="https://www.pinterest.com" class="nav-item"><span>Pinterest</span></a>
+          <a href="https://www.snapchat.com" class="nav-item"><span>Snapchat</span></a>
+          <a href="https://www.tumblr.com" class="nav-item"><span>Tumblr</span></a>
+          <a href="https://www.whatsapp.com" class="nav-item"><span>WhatsApp</span></a>
+          <a href="https://telegram.org" class="nav-item"><span>Telegram</span></a>
+          <a href="https://discord.com" class="nav-item"><span>Discord</span></a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2 class="category-title">视频和流媒体</h2>
+        <div class="nav-grid">
+          <a href="https://www.youtube.com" class="nav-item"><span>YouTube</span></a>
+          <a href="https://www.netflix.com" class="nav-item"><span>Netflix</span></a>
+          <a href="https://www.twitch.tv" class="nav-item"><span>Twitch</span></a>
+          <a href="https://www.hulu.com" class="nav-item"><span>Hulu</span></a>
+          <a href="https://www.disneyplus.com" class="nav-item"><span>Disney+</span></a>
+          <a href="https://www.vimeo.com" class="nav-item"><span>Vimeo</span></a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2 class="category-title">购物和电子商务</h2>
+        <div class="nav-grid">
+          <a href="https://www.amazon.com" class="nav-item"><span>Amazon</span></a>
+          <a href="https://www.ebay.com" class="nav-item"><span>eBay</span></a>
+          <a href="https://www.aliexpress.com" class="nav-item"><span>AliExpress</span></a>
+          <a href="https://www.etsy.com" class="nav-item"><span>Etsy</span></a>
+          <a href="https://www.walmart.com" class="nav-item"><span>Walmart</span></a>
+          <a href="https://www.taobao.com" class="nav-item"><span>Taobao</span></a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2 class="category-title">新闻和信息</h2>
+        <div class="nav-grid">
+          <a href="https://www.bbc.com" class="nav-item"><span>BBC</span></a>
+          <a href="https://www.cnn.com" class="nav-item"><span>CNN</span></a>
+          <a href="https://www.nytimes.com" class="nav-item"><span>New York Times</span></a>
+          <a href="https://www.reuters.com" class="nav-item"><span>Reuters</span></a>
+          <a href="https://www.theguardian.com" class="nav-item"><span>The Guardian</span></a>
+          <a href="https://www.bloomberg.com" class="nav-item"><span>Bloomberg</span></a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2 class="category-title">科技和开发</h2>
+        <div class="nav-grid">
+          <a href="https://www.github.com" class="nav-item"><span>GitHub</span></a>
+          <a href="https://www.stackoverflow.com" class="nav-item"><span>Stack Overflow</span></a>
+          <a href="https://www.w3schools.com" class="nav-item"><span>W3Schools</span></a>
+          <a href="https://www.codecademy.com" class="nav-item"><span>Codecademy</span></a>
+          <a href="https://www.geeksforgeeks.org" class="nav-item"><span>GeeksforGeeks</span></a>
+          <a href="https://www.freecodecamp.org" class="nav-item"><span>freeCodeCamp</span></a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2 class="category-title">音乐和娱乐</h2>
+        <div class="nav-grid">
+          <a href="https://www.spotify.com" class="nav-item"><span>Spotify</span></a>
+          <a href="https://www.apple.com/music" class="nav-item"><span>Apple Music</span></a>
+          <a href="https://www.soundcloud.com" class="nav-item"><span>SoundCloud</span></a>
+          <a href="https://www.pandora.com" class="nav-item"><span>Pandora</span></a>
+          <a href="https://www.last.fm" class="nav-item"><span>Last.fm</span></a>
+          <a href="https://www.bandcamp.com" class="nav-item"><span>Bandcamp</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">实用工具</h2>
         <div class="nav-grid">
-          <a href="https://translate.google.com" class="nav-item"><span><i class="nav-item-icon fas fa-language"></i>Google翻译</span></a>
-          <a href="https://d.186404.xyz/" class="nav-item"><span><i class="nav-item-icon fas fa-square-root-alt"></i><短链</span></a>
-          <a href="https://dynv6.com/" class="nav-item"><span><i class="nav-item-icon fas fa-calculator"></i>dynv6</span></a>
-          <a href="https://fast.com/" class="nav-item"><span><i class="nav-item-icon fas fa-tachometer-alt"></i>网速测试</span></a>
-          <a href="https://www.cloudns.net/" class="nav-item"><span><i class="nav-item-icon fas fa-clock"></i>cloudns</span></a>
-          <a href="https://www.cloudflare.com/zh-cn/" class="nav-item"><span><i class="nav-item-icon fas fa-book-open"></i>cloudflare</span></a>
-          <a href="https://ygpy.net/" class="nav-item"><span><i class="nav-item-icon fas fa-square-root-alt"></i><一个朋友</span></a>
-          <a href="https://notebooklm.google/" class="nav-item"><span><i class"nav-item-icon fas fa-calculator"></i>谷歌笔记</span></a>
-          <a href="https://email.ml/" class="nav-item"><span><i class="nav-item-icon fas fa-tachometer-alt"></i>临时邮箱</span></a>
-          <a href="https://www.ahhhhfs.com/" class="nav-item"><span><i class="nav-item-icon fas fa-clock"></i>ahhhhfs</span></a>
-          <a href="https://ip.sb/" class="nav-item"><span><i class="nav-item-icon fas fa-book-open"></i>ip查询</span></a>
-          <a hr="https://img.186404.xyz/" class="nav-item"><span><i class="nav-item-icon fas fa-tachometer-alt"></i>图床</span></a>
-          <a href="https://www.site.ac/" class="nav-item"><span><i class="nav-item-icon fas fa-clock"></i>site域名转发</span></a>
-          <a href="https://zh.go-to-library.sk/" class="nav-item"><span><i class="nav-item-icon fas fa-book-open"></i>Z-Library</span></a>
-          <a href="https://nic.us.kg/" class="nav-item"><span><i class="nav-item-icon fas fa-book-open"></i>us.kg域名</span></a>
-          <a href="https://www.spaceship.com/zh/" class="nav-item"><span><i class="nav-item-icon fas fa-clock"></i>spaceship廉价域名</span></a>
-            <a href="https://freedomain.one/" class="nav-item"><span><i class="nav-item-icon fas fa-square-root-alt"></i>freedomain域名</span></a>
+          <a href="https://translate.google.com" class="nav-item"><span>Google翻译</span></a>
+          <a href="https://www.wolframalpha.com" class="nav-item"><span>Wolfram Alpha</span></a>
+          <a href="https://www.calculator.net" class="nav-item"><span>在线计算器</span></a>
+          <a href="https://www.speedtest.net" class="nav-item"><span>网速测试</span></a>
+          <a href="https://www.timeanddate.com" class="nav-item"><span>时间日期</span></a>
+          <a href="https://www.wikihow.com" class="nav-item"><span>WikiHow</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">科技资讯</h2>
         <div class="nav-grid">
-          <a href="https://www.techcrunch.com" class="nav-item"><span><i class="nav-item-icon fas fa-microchip"></i>TechCrunch</span></a>
-          <a href="https://www.wired.com" class="nav-item"><span><i class="nav-item-icon fas fa-plug"></i>Wired</span></a>
-          <a href="https://www.theverge.com" class="nav-item"><span><i class="nav-item-icon fas fa-newspaper"></i>The Verge</span></a>
-          <a href="https://arstechnica.com" class="nav-item"><span><i class="nav-item-icon fas fa-flask"></i>Ars Technica</span></a>
-          <a href="https://www.engadget.com" class="nav-item"><span><i class="nav-item-icon fas fa-gamepad"></i>Engadget</span></a>
-          <a href="https://techradar.com" class="nav-item"><span><i class="nav-item-icon fas fa-satellite-dish"></i>TechRadar</span></a>
-          <a href="https://b.186404.xyz/" class="nav-item"><span><i class="nav-item-icon fas fa-microchip"></i>科技博客</span></a>
-          <a href="https://www.cnbeta.com.tw/" class="nav-item"><span><i class="nav-item-icon fas fa-plug"></i>cnbeta</span></a>
+          <a href="https://www.techcrunch.com" class="nav-item"><span>TechCrunch</span></a>
+          <a href="https://www.wired.com" class="nav-item"><span>Wired</span></a>
+          <a href="https://www.theverge.com" class="nav-item"><span>The Verge</span></a>
+          <a href="https://arstechnica.com" class="nav-item"><span>Ars Technica</span></a>
+          <a href="https://www.engadget.com" class="nav-item"><span>Engadget</span></a>
+          <a href="https://www.techradar.com" class="nav-item"><span>TechRadar</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">云存储</h2>
         <div class="nav-grid">
-          <a href="https://www.dropbox.com" class="nav-item"><span><i class="nav-item-icon fab fa-dropbox"></i>Dropbox</span></a>
-          <a href="https://drive.google.com" class="nav-item"><span><i class="nav-item-icon fab fa-google-drive"></i>Google Drive</span></a>
-          <a href="https://onedrive.live.com" class="nav-item"><span><i class="nav-item-icon fas fa-cloud"></i>OneDrive</span></a>
-          <a href="https://www.box.com" class="nav-item"><span><i class="nav-item-icon fas fa-box"></i>Box</span></a>
-          <a href="https://www.mediafire.com" class="nav-item"><span><i class="nav-item-icon fas fa-fire"></i>MediaFire</span></a>
-          <a href="https://mega.nz" class="nav-item"><span><i class="nav-item-icon fas fa-lock"></i>MEGA</span></a>
+          <a href="https://www.dropbox.com" class="nav-item"><span>Dropbox</span></a>
+          <a href="https://drive.google.com" class="nav-item"><span>Google Drive</span></a>
+          <a href="https://onedrive.live.com" class="nav-item"><span>OneDrive</span></a>
+          <a href="https://www.box.com" class="nav-item"><span>Box</span></a>
+          <a href="https://www.mediafire.com" class="nav-item"><span>MediaFire</span></a>
+          <a href="https://mega.nz" class="nav-item"><span>MEGA</span></a>
         </div>
       </div>
 
       <div class="category">
         <h2 class="category-title">电子邮箱</h2>
         <div class="nav-grid">
-          <a href="https://mail.google.com" class="nav-item"><span><i class="nav-item-icon fas fa-envelope"></i>Gmail</span></a>
-          <a href="https://outlook.live.com" class="nav-item"><span><i class="nav-item-icon fas fa-envelope-open"></i>Outlook</span></a>
-          <a href="https://mail.yahoo.com" class="nav-item"><span><i class="nav-item-icon fas fa-envelope-square"></i>Yahoo Mail</span></a>
-          <a href="https://www.zoho.com/mail" class="nav-item"><span><i class="nav-item-icon fas fa-at"></i>Zoho Mail</span></a>
-          <a href="https://www.protonmail.com" class="nav-item"><span><i class="nav-item-icon fas fa-shield-alt"></i>ProtonMail</span></a>
-          <a href="https://mail.qq.com" class="nav-item"><span><i class="nav-item-icon fas fa-envelope"></i>QQ邮箱</span></a>
+          <a href="https://mail.google.com" class="nav-item"><span>Gmail</span></a>
+          <a href="https://outlook.live.com" class="nav-item"><span>Outlook</span></a>
+          <a href="https://mail.yahoo.com" class="nav-item"><span>Yahoo Mail</span></a>
+          <a href="https://www.zoho.com/mail" class="nav-item"><span>Zoho Mail</span></a>
+          <a href="https://protonmail.com" class="nav-item"><span>ProtonMail</span></a>
+          <a href="https://mail.qq.com" class="nav-item"><span>QQ邮箱</span></a>
         </div>
       </div>
     </div>
