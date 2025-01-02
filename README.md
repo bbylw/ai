@@ -1,5 +1,7 @@
 # HyperNav - AI Navigation Hub
 
+![](https://cdn.jsdelivr.net/gh/pusvsimg/img@main/Image/20250102103602915.png)
+
 [English](#english) | [中文](#chinese)
 
 ## English
