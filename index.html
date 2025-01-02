@@ -1,125 +1,125 @@
-
 <html><head><base href="https://hypernav.tech" /><title>HyperNav - Your AI-Powered Navigation Hub</title><style>
   :root {
-    --background-color: #111111;
-    --text-color: #ffffff;
+    /* Layout Variables */
+    --container-max-width: 1200px;
+    --container-padding: 20px;
     --tile-size: 120px;
     --gap-size: 10px;
-    --accent-color: #00a2ff;
-    --ai-glow: #00ffff;
-    --ai-accent1: #00ffff;
-    --ai-accent2: #ff00ff;
+    
+    /* Colors - Base */
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --link-color: #4a9eff;
+    
+    /* Colors - Theme */
+    --primary-color: #00c2c7;
+    --secondary-color: #ff4081;
+    --accent-color: #7c4dff;
+    
+    /* Colors - Special Effects */
+    --ai-glow: rgba(0, 255, 255, 0.7);
+    --neon-pink: rgba(255, 0, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    
+    /* Shadows */
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    --text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    
+    /* Animations */
+    --transition-speed: 0.3s;
+    --bounce-timing: cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Typography */
+    --font-size-base: 1rem;
+    --font-size-large: 1.8rem;
+    --font-size-small: 0.9rem;
+    --font-weight-normal: 400;
+    --font-weight-bold: 600;
+    --letter-spacing: 1px;
   }
   
-  body, html {
+  body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    background-color: var(--background-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
     color: var(--text-color);
     min-height: 100vh;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
   }
   
   .container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
+    padding: var(--container-padding);
   }
   
   .logo-container {
-    background: linear-gradient(135deg, 
-      rgba(0,162,255,0.1), 
-      rgba(0,255,255,0.2), 
-      rgba(0,162,255,0.1)
-    );
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    text-align: center;
+    margin: 2rem 0;
     position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0,255,255,0.3);
-  }
-  
-  .logo-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    background: linear-gradient(to bottom right, rgba(255,255,255,0), rgba(0,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
-    transform: rotate(45deg);
-    animation: shimmer 5s infinite linear;
-  }
-  
-  @keyframes shimmer {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .logo {
-    font-size: 2.4rem;
-    font-weight: 600;
+    font-size: calc(var(--font-size-large) * 1.5);
+    font-weight: var(--font-weight-bold);
     color: var(--text-color);
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px var(--ai-glow), 0 0 20px var(--ai-glow), 0 0 30px var(--ai-glow);
-    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
     margin: 0;
     position: relative;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: 0 0 10px var(--ai-glow);
   }
-
+  
   .logo::before {
     content: '\f544'; /* Font Awesome brain icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: 2rem;
-    margin-right: 15px;
+    font-size: calc(var(--font-size-large) * 1.1);
+    margin-right: 1rem;
     filter: drop-shadow(0 0 5px var(--ai-glow));
   }
-
+  
   .logo::after {
     content: '';
     position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 3px solid var(--ai-glow);
-    border-left: 3px solid transparent;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.1875rem solid var(--ai-glow);
+    border-left: 0.1875rem solid transparent;
     border-radius: 50%;
     animation: rotate 2s linear infinite;
-    right: -60px;
+    right: -3.75rem;
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 0 0 10px var(--ai-glow);
   }
-
+  
   @keyframes rotate {
     0% { transform: translateY(-50%) rotate(0deg); }
     100% { transform: translateY(-50%) rotate(360deg); }
   }
-
+  
   .ai-subtitle {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     text-align: center;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    margin-top: 0.625rem;
+    letter-spacing: var(--letter-spacing);
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text-color);
     position: relative;
-    font-weight: 600;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(255, 0, 255, 0.7);
+    font-weight: var(--font-weight-bold);
+    text-shadow: 0 0 5px var(--ai-glow), 0 0 10px var(--neon-pink);
   }
-
+  
   @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.9; }
@@ -134,40 +134,27 @@
   
   .category {
     width: 100%;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1.25rem;
+    background: linear-gradient(135deg, var(--glass-bg), rgba(255,255,255,0.05));
+    border-radius: 0.625rem;
+    padding: 1rem;
+    box-shadow: var(--card-shadow);
     position: relative;
     overflow: hidden;
+    transition: transform var(--transition-speed) var(--bounce-timing);
   }
   
-  .category::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    background: linear-gradient(to bottom right, rgba(255,255,255,0), rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
-    transform: rotate(45deg);
-    animation: categoryShimmer 5s infinite linear;
-    z-index: 1;
-  }
-  
-  @keyframes categoryShimmer {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
+  .category:hover {
+    transform: translateY(-0.25rem);
   }
   
   .category-title {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin-bottom: 15px;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-normal);
+    margin-bottom: 1rem;
     color: var(--text-color);
-    letter-spacing: 1px;
-    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    letter-spacing: var(--letter-spacing);
+    text-shadow: var(--text-shadow);
     text-align: center;
     position: relative;
     z-index: 2;
@@ -190,22 +177,22 @@
     justify-content: center;
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
     text-align: center;
-    padding: 10px;
+    padding: 0.625rem;
     box-sizing: border-box;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all var(--transition-speed) var(--bounce-timing);
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 0.625rem;
+    box-shadow: var(--card-shadow);
     transform-origin: center;
   }
   
   .nav-item:hover, .nav-item:focus {
     transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: var(--hover-shadow);
     z-index: 10;
     outline: none;
   }
@@ -280,6 +267,77 @@
     100% { transform: translateY(-10px) rotate(10deg); }
   }
 
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    :root {
+      --container-padding: 1.5rem;
+      --tile-size: 110px;
+      --gap-size: 0.75rem;
+      --font-size-large: 1.6rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    :root {
+      --container-padding: 1.25rem;
+      --tile-size: 100px;
+      --gap-size: 0.625rem;
+      --font-size-large: 1.4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --container-padding: 1rem;
+      --tile-size: 90px;
+      --gap-size: 0.5rem;
+      --font-size-large: 1.3rem;
+      --font-size-base: 0.9rem;
+    }
+
+    .logo::after {
+      width: 2rem;
+      height: 2rem;
+      right: -3rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    :root {
+      --container-padding: 0.75rem;
+      --tile-size: 80px;
+      --gap-size: 0.375rem;
+      --font-size-large: 1.2rem;
+      --font-size-base: 0.85rem;
+    }
+
+    .logo-container {
+      margin: 1.5rem 0;
+    }
+  }
+
+  @media (max-width: 375px) {
+    :root {
+      --container-padding: 0.5rem;
+      --tile-size: 70px;
+      --gap-size: 0.25rem;
+      --font-size-large: 1.1rem;
+      --font-size-base: 0.8rem;
+    }
+
+    .logo-container {
+      margin: 1rem 0;
+    }
+  }
+
+  /* 响应式设计优化 */
+  @media (max-width: 1200px) {
+    .container {
+      max-width: 95%;
+      padding: 15px;
+    }
+  }
+
   @media (max-width: 1024px) {
     :root {
       --tile-size: 110px;
@@ -292,6 +350,14 @@
     
     .category-title {
       font-size: 1.6rem;
+    }
+
+    .nav-item {
+      font-size: 1rem;
+    }
+
+    .nav-item-icon {
+      font-size: 1.3rem;
     }
   }
 
@@ -307,52 +373,190 @@
     
     .category-title {
       font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .nav-item {
+      font-size: 0.95rem;
+    }
+
+    .nav-item-icon {
+      font-size: 1.2rem;
+      margin-right: 6px;
     }
 
     .container {
+      padding: 12px;
+    }
+
+    .logo-container {
       padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .category {
+      padding: 12px;
+      margin-bottom: 15px;
     }
   }
 
   @media (max-width: 480px) {
     :root {
-      --tile-size: 80px;
+      --tile-size: 85px;
       --gap-size: 6px;
     }
     
     .logo {
       font-size: 1.8rem;
     }
+
+    .logo::before {
+      font-size: 1.6rem;
+      margin-right: 10px;
+    }
     
     .category-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
     }
     
     .nav-item {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+
+    .nav-item-icon {
+      font-size: 1.1rem;
+      margin-right: 4px;
     }
 
     .container {
       padding: 10px;
     }
+
+    .ai-subtitle {
+      font-size: 0.9rem;
+    }
+
+    .category {
+      padding: 10px;
+      margin-bottom: 12px;
+    }
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 360px) {
     :root {
-      --tile-size: 70px;
+      --tile-size: 75px;
       --gap-size: 5px;
     }
     
     .logo {
       font-size: 1.6rem;
     }
+
+    .logo::before {
+      font-size: 1.4rem;
+      margin-right: 8px;
+    }
     
     .category-title {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
     
     .nav-item {
       font-size: 0.8rem;
+      padding: 6px;
+    }
+
+    .nav-item-icon {
+      font-size: 1rem;
+      margin-right: 3px;
+    }
+
+    .container {
+      padding: 8px;
+    }
+
+    .ai-subtitle {
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    .category {
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* 优化触摸屏交互 */
+  @media (hover: none) {
+    .nav-item:hover {
+      transform: none;
+    }
+
+    .nav-item:active {
+      transform: scale(0.95);
+    }
+
+    .nav-item-icon {
+      animation: none;
+    }
+
+    .nav-item:active .nav-item-icon {
+      animation: iconBounce 0.3s ease;
+    }
+  }
+
+  /* 优化横屏模式 */
+  @media (orientation: landscape) and (max-height: 500px) {
+    .container {
+      padding: 10px;
+    }
+
+    .logo-container {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .category {
+      margin-bottom: 10px;
+    }
+
+    .nav-grid {
+      gap: 5px;
+    }
+  }
+
+  /* 优化高DPI屏幕 */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .nav-item::before,
+    .nav-item::after,
+    .logo-container::before,
+    .category::before {
+      transform-origin: center;
+      backface-visibility: hidden;
+    }
+  }
+
+  /* 优化暗色主题 */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #111111;
+      --text-color: #ffffff;
+    }
+  }
+
+  /* 优化打印样式 */
+  @media print {
+    .nav-item {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .category {
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
   }
 </style>
@@ -367,71 +571,197 @@ document.addEventListener('DOMContentLoaded', function() {
     'fa-lightbulb', 'fa-magic', 'fa-rocket', 'fa-puzzle-piece', 'fa-gift',
     'fa-atom', 'fa-compass', 'fa-gem', 'fa-cube', 'fa-brain'
   ];
+
+  // 扩展图标映射
+  const iconMap = new Map([
+    // 搜索引擎
+    ['google', 'fab fa-google'],
+    ['bing', 'fas fa-search'],
+    ['baidu', 'fas fa-paw'],
+    ['duckduckgo', 'fas fa-search'],
+    ['ecosia', 'fas fa-leaf'],
+    ['yandex', 'fas fa-search'],
+    
+    // AI相关
+    ['chatgpt', 'fas fa-robot'],
+    ['claude', 'fas fa-brain'],
+    ['poe', 'fas fa-feather-alt'],
+    ['websim', 'fas fa-microchip'],
+    ['chandler', 'fas fa-comments'],
+    ['doubao', 'fas fa-comment-dots'],
+    ['yuanbao', 'fas fa-coins'],
+    ['傻豆包', 'fas fa-comment-dots'],
+    ['傻元宝', 'fas fa-coins'],
+    
+    // 社交媒体
+    ['facebook', 'fab fa-facebook-f'],
+    ['twitter', 'fab fa-twitter'],
+    ['instagram', 'fab fa-instagram'],
+    ['linkedin', 'fab fa-linkedin-in'],
+    ['pinterest', 'fab fa-pinterest'],
+    ['reddit', 'fab fa-reddit-alien'],
+    ['tiktok', 'fab fa-tiktok'],
+    ['github', 'fab fa-github'],
+    
+    // 多媒体
+    ['youtube', 'fab fa-youtube'],
+    ['netflix', 'fas fa-film'],
+    ['spotify', 'fab fa-spotify'],
+    
+    // 电商
+    ['amazon', 'fab fa-amazon'],
+    ['ebay', 'fab fa-ebay'],
+    
+    // 科技公司
+    ['apple', 'fab fa-apple'],
+    ['microsoft', 'fab fa-microsoft'],
+    
+    // 工具类
+    ['translate', 'fas fa-language'],
+    ['短链', 'fas fa-link'],
+    ['dynv6', 'fas fa-network-wired'],
+    ['fast.com', 'fas fa-tachometer-alt'],
+    ['cloudns', 'fas fa-cloud'],
+    ['cloudflare', 'fas fa-shield-alt'],
+    ['一个朋友', 'fas fa-user-friends'],
+    ['notebook', 'fas fa-book'],
+    ['email', 'fas fa-envelope'],
+    ['临时邮箱', 'fas fa-envelope-open'],
+    ['ip', 'fas fa-network-wired'],
+    ['图床', 'fas fa-images'],
+    ['site', 'fas fa-random'],
+    ['library', 'fas fa-book-reader'],
+    ['域名', 'fas fa-globe'],
+    ['spaceship', 'fas fa-rocket'],
+    ['fontawesome', 'fab fa-font-awesome'],
+    
+    // 科技资讯
+    ['techcrunch', 'fas fa-microchip'],
+    ['wired', 'fas fa-wifi'],
+    ['verge', 'fas fa-newspaper'],
+    ['arstechnica', 'fas fa-microscope'],
+    ['engadget', 'fas fa-gamepad'],
+    ['techradar', 'fas fa-rss'],
+    ['cnbeta', 'fas fa-rss'],
+    ['博客', 'fas fa-blog'],
+    
+    // 云存储
+    ['dropbox', 'fab fa-dropbox'],
+    ['drive.google', 'fab fa-google-drive'],
+    ['onedrive', 'fas fa-cloud'],
+    ['box.com', 'fas fa-box'],
+    ['mediafire', 'fas fa-fire'],
+    ['mega', 'fas fa-database'],
+    
+    // 邮箱服务
+    ['gmail', 'fab fa-google'],
+    ['outlook', 'fas fa-envelope'],
+    ['zoho', 'fas fa-at'],
+    ['protonmail', 'fas fa-shield-alt'],
+    ['qq邮箱', 'fab fa-qq']
+  ]);
+
+  // 添加关键词到图标的映射
+  const keywordMap = {
+    'ai': ['fas', 'fa-robot'],
+    'chat': ['fas', 'fa-comments'],
+    'search': ['fas', 'fa-search'],
+    'mail': ['fas', 'fa-envelope'],
+    'cloud': ['fas', 'fa-cloud'],
+    'speed': ['fas', 'fa-tachometer-alt'],
+    'test': ['fas', 'fa-check'],
+    'book': ['fas', 'fa-book'],
+    'blog': ['fas', 'fa-blog'],
+    'news': ['fas', 'fa-newspaper'],
+    'tech': ['fas', 'fa-microchip'],
+    'security': ['fas', 'fa-shield-alt'],
+    'storage': ['fas', 'fa-database'],
+    'social': ['fas', 'fa-users'],
+    'video': ['fas', 'fa-video'],
+    'music': ['fas', 'fa-music'],
+    'shop': ['fas', 'fa-shopping-cart'],
+    'tool': ['fas', 'fa-tools'],
+    'dev': ['fas', 'fa-code'],
+    'web': ['fas', 'fa-globe']
+  };
   
   navItems.forEach(item => {
-    const link = item.getAttribute('href');
-    const text = item.querySelector('span').textContent;
-    let icon = '';
+    const link = item.getAttribute('href') || '';
+    const text = item.querySelector('span').textContent.toLowerCase();
+    let iconClass = '';
 
-    // 自动匹配图标
-    if (link.includes('google')) icon = 'fab fa-google';
-    else if (link.includes('youtube')) icon = 'fab fa-youtube';
-    else if (link.includes('facebook')) icon = 'fab fa-facebook-f';
-    else if (link.includes('twitter')) icon = 'fab fa-twitter';
-    else if (link.includes('instagram')) icon = 'fab fa-instagram';
-    else if (link.includes('linkedin')) icon = 'fab fa-linkedin-in';
-    else if (link.includes('pinterest')) icon = 'fab fa-pinterest';
-    else if (link.includes('reddit')) icon = 'fab fa-reddit-alien';
-    else if (link.includes('tiktok')) icon = 'fab fa-tiktok';
-    else if (link.includes('netflix')) icon = 'fas fa-film';
-    else if (link.includes('amazon')) icon = 'fab fa-amazon';
-    else if (link.includes('ebay')) icon = 'fab fa-ebay';
-    else if (link.includes('spotify')) icon = 'fab fa-spotify';
-    else if (link.includes('apple')) icon = 'fab fa-apple';
-    else if (link.includes('microsoft')) icon = 'fab fa-microsoft';
-    else if (link.includes('wikipedia')) icon = 'fab fa-wikipedia-w';
-    else if (link.includes('twitch')) icon = 'fab fa-twitch';
-    else if (link.includes('github')) icon = 'fab fa-github';
-    else if (link.includes('stackoverflow')) icon = 'fab fa-stack-overflow';
-    else if (link.includes('whatsapp')) icon = 'fab fa-whatsapp';
-    else if (link.includes('telegram')) icon = 'fab fa-telegram';
-    else if (link.includes('snapchat')) icon = 'fab fa-snapchat-ghost';
-    else if (link.includes('discord')) icon = 'fab fa-discord';
-    else if (link.includes('yahoo')) icon = 'fab fa-yahoo';
-    else if (link.includes('bing')) icon = 'fa-search';
-    else if (link.includes('baidu')) icon = 'fa-paw';
-    else if (link.includes('duckduckgo')) icon = 'fa-duck';
-    else if (link.includes('ecosia')) icon = 'fa-leaf';
-    else if (link.includes('yandex')) icon = 'fa-globe-europe';
-    else if (link.includes('translate')) icon = 'fa-language';
-    else if (link.includes('wolframalpha')) icon = 'fa-square-root-alt';
-    else if (link.includes('calculator')) icon = 'fa-calculator';
-    else if (link.includes('speedtest')) icon = 'fa-tachometer-alt';
-    else if (link.includes('time')) icon = 'fa-clock';
-    else if (link.includes('wikihow')) icon = 'fa-question-circle';
-    else if (link.includes('techcrunch')) icon = 'fa-microchip';
-    else if (link.includes('wired')) icon = 'fa-wifi';
-    else if (link.includes('verge')) icon = 'fa-newspaper';
-    else if (link.includes('arstechnica')) icon = 'fa-microscope';
-    else if (link.includes('engadget')) icon = 'fa-gamepad';
-    else if (link.includes('techradar')) icon = 'fa-radar';
-    else if (link.includes('dropbox')) icon = 'fab fa-dropbox';
-    else if (link.includes('drive.google')) icon = 'fab fa-google-drive';
-    else if (link.includes('onedrive')) icon = 'fa-cloud';
-    else if (link.includes('box.com')) icon = 'fa-box';
-    else if (link.includes('mediafire')) icon = 'fa-fire';
-    else if (link.includes('mega')) icon = 'fa-database';
-    else if (link.includes('mail') || link.includes('outlook') || text.toLowerCase().includes('邮箱')) icon = 'fa-envelope';
-    else if (link.includes('zoho')) icon = 'fa-at';
-    else if (link.includes('protonmail')) icon = 'fa-shield-alt';
-    else {
-      // 如果没有匹配到特定图标，随机选择一个通用图标
-      icon = generalIcons[Math.floor(Math.random() * generalIcons.length)];
+    // 1. 检查是否匹配预定义图标
+    for (const [key, value] of iconMap.entries()) {
+      if (link.includes(key.toLowerCase()) || text.includes(key.toLowerCase())) {
+        iconClass = value;
+        break;
+      }
+    }
+
+    // 2. 如果没有匹配到，检查关键词
+    if (!iconClass) {
+      for (const [keyword, [prefix, icon]] of Object.entries(keywordMap)) {
+        if (link.includes(keyword) || text.includes(keyword)) {
+          iconClass = `${prefix} ${icon}`;
+          break;
+        }
+      }
+    }
+
+    // 3. 如果仍然没有匹配到，基于URL结构选择图标
+    if (!iconClass && link.startsWith('http')) {
+      try {
+        const domain = new URL(link).hostname.split('.');
+        if (domain.length > 1) {
+          const mainDomain = domain[domain.length - 2].toLowerCase();
+          for (const [key, value] of iconMap.entries()) {
+            if (mainDomain.includes(key.toLowerCase())) {
+              iconClass = value;
+              break;
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Invalid URL:', link);
+      }
+    }
+
+    // 4. 如果最终还是没有匹配到，使用智能默认图标
+    if (!iconClass) {
+      if (text.length < 10) {
+        iconClass = 'fas fa-bookmark';
+      } else if (text.includes('下载') || text.includes('upload')) {
+        iconClass = 'fas fa-download';
+      } else if (text.includes('登录') || text.includes('注册') || text.includes('account')) {
+        iconClass = 'fas fa-user';
+      } else {
+        const randomIcon = generalIcons[Math.floor(Math.random() * generalIcons.length)];
+        iconClass = `fas ${randomIcon}`;
+      }
     }
     
+    // 移除任何现有的图标
+    const existingIcon = item.querySelector('.nav-item-icon');
+    if (existingIcon) {
+      existingIcon.remove();
+    }
+
+    // 创建新图标
     const iconElement = document.createElement('i');
-    iconElement.className = `nav-item-icon fas ${icon}`;
-    item.querySelector('span').prepend(iconElement);
+    iconElement.className = `nav-item-icon ${iconClass}`;
+    iconElement.setAttribute('aria-hidden', 'true');
+    
+    // 确保span存在并插入图标
+    const span = item.querySelector('span');
+    if (span) {
+      // 移除任何现有的</i>标签
+      span.innerHTML = span.innerHTML.replace('</i>', '');
+      span.prepend(iconElement);
+    }
+    
+    // 添加ARIA标签
+    item.setAttribute('role', 'link');
+    item.setAttribute('aria-label', `访问 ${item.querySelector('span').textContent.trim()}`);
   });
 });
 </script>
